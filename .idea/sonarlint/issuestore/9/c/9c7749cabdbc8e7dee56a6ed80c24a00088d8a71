@@ -1,0 +1,7 @@
+
+a
+java:S2147"DCombine this catch with the one at line 26, which has the same body.(ï­£Ä8–ù¸ıú.
+j
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(åÎèá8ø´ıú.
+u
+java:S1450"SRemove the "prop" field and declare it as a local variable in the relevant methods.(¡¹ûÿÿÿÿ8”Ø°ıú.
