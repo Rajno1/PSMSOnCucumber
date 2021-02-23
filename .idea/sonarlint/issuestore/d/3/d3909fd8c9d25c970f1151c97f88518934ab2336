@@ -1,9 +1,9 @@
 
-E
-java:S1444"(Make this "public static dr" field final(úÙéñ8Æã×üú.
-U	java:S106 "9Replace this use of System.out or System.err by a logger.(İ¦“ 8Ûéßüú.
-Z	java:S106."9Replace this use of System.out or System.err by a logger.(ÉÊèÕşÿÿÿÿ8õ¨óüú.
-t
-java:S1104"RMake driver a static final constant or non-public and provide accessors if needed.(ÔèË©úÿÿÿÿ8°´Éüú.
-k
-java:S1104"NMake dr a static final constant or non-public and provide accessors if needed.(úÙéñ8Æã×üú.
+C
+java:S1444"(Make this "public static dr" field final(úÙéñ8Æã×üú.
+i
+java:S1104"NMake dr a static final constant or non-public and provide accessors if needed.(úÙéñ8Æã×üú.
+X	java:S106"9Replace this use of System.out or System.err by a logger.(ÉÊèÕşÿÿÿÿ8õ¨óüú.
+r
+java:S1104"RMake driver a static final constant or non-public and provide accessors if needed.(ÔèË©úÿÿÿÿ8°´Éüú.
+S	java:S106"9Replace this use of System.out or System.err by a logger.(İ¦“ 8Ûéßüú.

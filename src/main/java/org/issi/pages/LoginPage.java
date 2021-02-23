@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
-    private WebDriver driver;
+    private final WebDriver driver;
     //By locators
-    private final By textboxUsername = By.id("id_uname");
-    private final By textboxPassword = By.id("id_password");
-    private final By buttonLogin = By.xpath("//span[text()='SIGN-IN']/parent::button");
-    private final By forgotpwdlink = By.linkText("Forgot Password?");
+    private final By textboxUsername = By.id("userName");
+    private final By textboxPassword = By.id("password");
+    private final By buttonLogin = By.id("submit");
+    private final By forgotpwdlink = By.xpath("//a[contains(text(),' Forgot Password')]");
 
     //constructor
     public LoginPage(WebDriver driver) {
@@ -35,11 +35,11 @@ public class LoginPage {
         driver.findElement(buttonLogin).click();
     }
 
-    public HomePage doLogin(String un, String pwd){
+    public ApplicationsList doLogin(String un, String pwd){
         System.out.println("Login with : " + un + "and" + pwd);
         driver.findElement(textboxUsername).sendKeys(un);
         driver.findElement(textboxPassword).sendKeys(pwd);
         driver.findElement(buttonLogin).click();
-        return new HomePage(driver);
+        return new ApplicationsList(driver);
     }
 }

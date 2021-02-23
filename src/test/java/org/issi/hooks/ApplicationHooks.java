@@ -3,8 +3,10 @@ package org.issi.hooks;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.issi.enums.ConfigProperties;
 import org.issi.factory.DriverFactory;
 import org.issi.utilities.ConfigReader;
+import org.issi.utilities.PropertyUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -20,15 +22,16 @@ public class ApplicationHooks {
     private ConfigReader configReader;
     Properties prop;
 
-    @Before(order = 0)
-    public void getProperty() {
-        configReader = new ConfigReader();
-        prop = configReader.initProperties();
-    }
+//    @Before(order = 0)
+//    public void getProperty() {
+//        configReader = new ConfigReader();
+//        prop = configReader.initProperties();
+//    }
 
     @Before(order = 1)
     public void launchBrowser() {
-        String browserName = prop.getProperty("browser");
+       // String browserName = prop.getProperty("browser");
+        String browserName = PropertyUtils.getValue(ConfigProperties.BROWSER);
         driverFactory = new DriverFactory();
         driver = driverFactory.initDriver(browserName);
 

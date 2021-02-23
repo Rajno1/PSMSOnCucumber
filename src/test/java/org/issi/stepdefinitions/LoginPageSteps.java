@@ -3,8 +3,11 @@ package org.issi.stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.issi.enums.ConfigProperties;
 import org.issi.factory.DriverFactory;
 import org.issi.pages.LoginPage;
+import org.issi.utilities.FrameworkConstants;
+import org.issi.utilities.PropertyUtils;
 import org.junit.Assert;
 
 public class LoginPageSteps {
@@ -13,7 +16,7 @@ public class LoginPageSteps {
 
     @Given("user is on login page")
     public void user_is_on_login_page() {
-        DriverFactory.getDriver().get("https://psmsclientdemo.issi-software.com/login");
+        DriverFactory.getDriver().get(PropertyUtils.getValue(ConfigProperties.URL));
     }
 
     @When("user gets the title of the page")
@@ -27,8 +30,8 @@ public class LoginPageSteps {
         Assert.assertTrue(title.contains(expectedTitleName));
     }
 
-    @Then("forget password link should be display")
-    public void forget_password_link_should_be_display() {
+    @Then("forget password button should be display")
+    public void forget_password_button_should_be_display() {
         Assert.assertTrue(loginPage.isForgotPwdlinkExist());
     }
 

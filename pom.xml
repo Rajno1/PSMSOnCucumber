@@ -14,13 +14,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
     <java.version>1.8</java.version>
     <junit.version>4.13.2</junit.version>
     <cucumber.version>6.10.0</cucumber.version>
     <maven.compiler.version>3.8.1</maven.compiler.version>
-    <maven.surefire.version>2.22.1</maven.surefire.version>
+    <maven.surefire.version>2.22.2</maven.surefire.version>
   </properties>
 
   <dependencies>
@@ -65,6 +63,34 @@
       <artifactId>extentreports-cucumber6-adapter</artifactId>
       <version>2.6.0</version>
     </dependency>
+    <!--  These two testng and cucumber-testng are added to do parell execution on scenario level-->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.14.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.2</version>
+    </dependency>
 
     <!-- These two dependencies has been added to avoid 'SLF4j' warnings in console-->
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
@@ -80,6 +106,8 @@
       <version>1.7.30</version>
       <scope>test</scope>
     </dependency>
+
+
   </dependencies>
 
   <build>
@@ -103,8 +131,7 @@
             <include>**/ParallelRun.java</include>
           </includes>
           <parallel>methods</parallel>
-          <threadCount>4</threadCount>
-          <useUnlimitedThreads>false</useUnlimitedThreads>
+          <useUnlimitedThreads>true</useUnlimitedThreads>
         </configuration>
       </plugin>
 

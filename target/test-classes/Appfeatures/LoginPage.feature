@@ -1,17 +1,13 @@
+
 Feature: Login page feature
-  Scenario: Login page title
+  @smoke
+  Scenario: Validating login functionality
     Given user is on login page
     When user gets the title of the page
-    Then page title should be "PSMS"
-
-  Scenario: Forgot password link
-    Given user is on login page
+    Then page title should be "Login Page"
     Then forget password link should be display
-
-  Scenario: Login with correct credentials
-    Given user is on login page
-    When user enters username "admin"
-    And user enters password "issi123"
+    When user enters username "Applicant"
+    And user enters password "Issi123#"
     And user clicks on login button
     When user gets the title of the page
-    And page title should be "PSMS"
+    And page title should be "ApplicationsList - Maryland Residential Portal"
